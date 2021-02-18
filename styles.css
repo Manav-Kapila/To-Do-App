@@ -1,0 +1,372 @@
+body{
+    margin: 0;
+    /* background: #1E242A; */
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    background: linear-gradient(to top, cyan,black);
+}
+
+.hamBar{
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    display: none;
+}
+
+#box1{
+    width: 530px;
+    height: 625px;
+    position: absolute;
+    bottom: -100%;
+    left: 30%;
+    animation: anim 2s forwards, anim2 3s forwards 3s;
+}
+#box1::after{
+    width: 530px;
+    height: 625px;
+    content: '';
+    background-image: url('assets/22.png');
+    position: absolute;
+    left: 0;
+}
+
+@keyframes anim{
+    from{
+        bottom: -100%;
+    }
+    to{
+        bottom: 0%;
+    }
+}
+
+@keyframes anim2{
+    from{
+        left: 30%;
+        width: 530px;
+    }
+    to{
+        left: 50%;
+        width: 0px;
+    }
+}
+
+#box2{
+    width: auto;
+    height: auto;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 9em;
+    font-weight: 500;
+    line-height: 130px;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    overflow: hidden;
+    color: rgb(36, 34, 34);
+    text-shadow: 0px 0 1px black;
+}
+
+#text{
+    position: relative;
+    left: -100%;
+    animation: anim3 2s forwards 3s;
+    letter-spacing: 2px;
+}
+
+@keyframes anim3{
+    from{
+        left: -100%;
+    }
+    to{
+        left: 0%;
+    }
+}
+#heroBtn{
+    padding: 1.15rem;
+    border-radius: 20px;
+    font-size: 2rem;
+    color: cyan;
+    background-color: rgb(36, 34, 34);
+    transition: all 0.5s ease-in-out;
+}
+
+#heroBtn:hover{
+    background: #00bebe;
+    color: black;
+    cursor: pointer;
+    border: solid black 3px;
+}   
+
+#box3{
+    overflow: hidden;
+}
+
+#container{
+    width: 100%;
+    position: absolute;
+    top: -100%;
+    animation: anim4 2s forwards 2.5s;
+    background-color: transparent;
+}
+
+#logo{
+    float: left;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
+#logo img{
+    width: 50px;
+    margin-top: 30%;
+}
+
+#menu{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 2px;
+    margin-right: 17%;
+    margin-top: 2%;
+    float: right;
+}
+
+#menu ul{
+    list-style: none;
+}
+
+#menu ul li{
+    display: inline-block;
+    margin-left: 100px; 
+    font-size: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover{
+    cursor: pointer;
+    color: #00bcbc;
+    text-decoration: underline;
+}
+
+
+@keyframes anim4{
+    from{
+        top: -100%;
+    }
+    to{
+        top: 0%;
+    }
+}
+
+/* for modals */
+.popup .overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+.popup .content{
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    box-sizing: border-box;
+    transform:translate(-50%,-50%) scale(0);
+    background: #fffffff0;
+    border-radius: 10px;
+    width: 40rem;
+    height: 30rem;
+    padding: 1rem 4rem;
+    z-index: 2;
+    text-align: center;
+    color: black;
+    /* transition: all 0.5s ease-in-out; */
+}
+
+.popup .close-btn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-weight: bold;
+    font-size: 3rem;
+    background: gray;
+    padding: 0.05rem .75rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.popup.active .overlay{
+    display: block;
+}
+
+.popup.active .content{
+    transition: all 0.5s ease-in-out;
+    transform:translate(0%,0%) scale(1);
+}
+
+.aboutHeader{
+    text-align: center;
+    font-weight: bolder;
+    padding:0rem 2rem;
+    font-size: 35px;
+}
+
+.aboutPara{
+    text-align: center;
+    color: #675858;
+    padding: 2rem 0.5rem;
+    font-size: 20px;
+    word-spacing: 0.7em;
+    -webkit-text-stroke: thin;
+    line-height: 1.82rem;
+}
+
+hr{
+    height: 0.15rem;
+    background: grey;
+}
+
+
+/* responsive design */
+
+@media all and (max-width: 768px){
+
+    .aboutHeader{
+        font-style: 30px;
+    }
+
+    .popup .content{
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        border-radius: 10px;
+        width: 90%;
+        height: 85%;
+        padding: 0rem 1rem
+    }
+
+    p.aboutPara{
+        font-size: 16px;
+        letter-spacing: 1px;
+        word-spacing: 1em;
+    }
+
+    .popup .close-btn{
+        font-size: 2rem;
+    }
+
+    #main{
+        overflow: scroll;
+    }
+
+    #menu{
+        display: none;
+    }
+    /* #menu ul {
+        display: flex;
+        flex-direction: row;
+        gap: 15%;
+    } */
+
+    #box2{
+        font-size: 4em;
+        line-height: 5rem;
+    }
+
+    #heroBtn{
+        padding: 1rem;
+        font-size: 1.25rem;
+    }
+
+    #logo{
+        margin: 2% auto;
+    }
+
+    #box1{
+        animation: anim 2s forwards;
+        left: 15%;
+    }
+
+    #box1::after{
+        background-image: url('assets/221.png');
+        background-repeat: no-repeat;
+        top: 15%;
+    }
+
+    #box2{
+        top: 70%;
+        bottom: 5%;
+        overflow: visible;
+    }
+
+    #text{
+        animation: none;
+        left: 5%;
+        bottom: 10%;
+    }
+    .hamBar{
+        display: block;
+        margin-top: 25%;
+        margin-left: 5%;
+    }
+    #container{
+        /* display: flex;
+        flex-direction: row;
+        padding: 0.5rem */
+        display:grid;
+        transition: all 0.75s ease-in-out;
+        grid-template-columns:1fr 2fr 1fr;
+        grid-auto-rows:minmax(100px, auto);
+        grid-gap:1em;
+        justify-items:stretch;
+        align-items:stretch;
+        /* background-color: #5f9ea0e0; */
+        background-color: #201f1fd1;
+        height: 100%;
+        }
+    #menu ul{
+        display: flex;
+        flex-direction: row;
+        column-gap: 4rem;
+        margin: -90% auto;
+    }
+    #menu ul li{
+        font-size: 1rem;
+        margin-left: 2%;
+    }
+    
+    #menu.alive{
+        display: block;
+        color: white;
+        margin-top: 20%;
+        float: left;
+    }
+
+    #menu.hide{
+        display: none;
+    }
+    #container.blackOut{
+        background-color: transparent;
+        transition: all 0.5s ease-in-out;
+    }
+
+    li a:hover{
+        color: rgb(32, 31, 31);
+    }
+
+}

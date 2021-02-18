@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Animated Page</title>
+    <!-- style css -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- fevicon -->
+    <link rel="icon" href="assets/logo.png" type="image/gif" />
+</head>
+<!-- body -->
+
+<body>
+    <div id="main">
+        <div id="box1">
+
+        </div>
+
+        <div id="box2">
+            <div id="text">
+                I'VE GOT<br>TO DO
+                <br>
+                <a href="toDo.html"><button id="heroBtn">Show List</button></a>
+            </div>
+        </div>
+        <div id="box3">
+            <div id="container" class="blackOut">
+                <div id="bars" class="hamBar" onclick="showMenu()">&#x2630;</div>
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="assets/logo2.png" alt="logo image">
+                    </a> </div><br>
+                <!-- </div> -->
+                <div id="menu" class="alive hide">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="#" class="btn sign-up " onclick="togglePopup()">ABOUT</a></li>
+                        <li><a href="#">HELP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--About Modal code -->
+        <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()">&times;</div>
+                <h1 class="aboutHeader">About</h1>
+                <hr>
+                <p class="aboutPara">ToDo is a website to implement To Do List functionality.<br>
+                    Guide to use this website has been provided under HELP section of this website.<br>
+                    The UI of this website is inspired from latest trend of Typography in UI Designing.
+                    <br>
+                    This website is Designed and Developed by <br><B>MANAV KAPILA</B><br>
+                    and is licensed under Apache Liscence.
+                </p>
+            </div>
+        </div>
+        <!-- About modal ends here -->
+    </div>
+
+
+    <!-- JavaScript Code -->
+    <script>
+        //     JS CODE FOR ABOUT MODAL 
+        function togglePopup() {
+            document.getElementById("popup-1").classList.toggle("active");
+        }
+        // JS CODE FOR ABOUT MODAL ENDS HERE 
+        //     JS CODE FOR RESPONSIVE MENU 
+        function showMenu() {
+            document.getElementById("menu").classList.toggle("hide");
+            document.getElementById("container").classList.toggle("blackOut");
+        }
+        // JS CODE FOR RESPONSIVE MENU  ENDS HERE 
+    </script>
+</body>
+
+</html>
