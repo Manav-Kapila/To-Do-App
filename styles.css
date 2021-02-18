@@ -337,13 +337,13 @@ hr{
         align-items:stretch;
         /* background-color: #5f9ea0e0; */
         background-color: #201f1fd1;
-        height: 100%;
+        height: 60vh;
         }
     #menu ul{
         display: flex;
         flex-direction: row;
         column-gap: 4rem;
-        margin: -90% auto;
+        margin: -25% auto;
     }
     #menu ul li{
         font-size: 1rem;
